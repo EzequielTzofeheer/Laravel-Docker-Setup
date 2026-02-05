@@ -23,10 +23,10 @@ Um starter kit base para projetos **Laravel 12.x** utilizando **Docker**, com am
 
 ## 🧱 Stack
 
+- PHP 8.2
 - Laravel 12.x
 - Docker
 - Docker Compose
-- PHP 8.2
 - Nginx
 - MySQL 8
 - PHPMyAdmin
@@ -103,6 +103,12 @@ composer install
 php artisan key:generate
 ```
 
+8️⃣ Migre o banco de dados
+
+```
+php artisan migrate
+```
+
 ---
 
 ## 🌐 Acessos
@@ -122,8 +128,8 @@ php artisan key:generate
 
 ## 🧩 Compatibilidade
 
-- Laravel: 12.x
 - PHP: 8.2+
+- Laravel: 12.x
 - Docker: 29+
 - Docker Compose: 5+
 
@@ -149,6 +155,7 @@ Criado e mantido por **Ezequiel Tzofeheer**
 
 ## 🙌 Créditos
 
+- PHP
 - Laravel Framework
 - Docker
 - Comunidade Open Source
