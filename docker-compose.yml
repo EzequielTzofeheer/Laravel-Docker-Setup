@@ -14,19 +14,6 @@ services:
         networks:
             - laravel-docker
 
-    queue:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        command: 'php artisan queue:work'
-        restart: unless-stopped
-        volumes:
-            - ./:/var/www
-        depends_on:
-            - redis
-        networks:
-            - laravel-docker
-
     # NGINX
     nginx:
         image: nginx:alpine
@@ -69,6 +56,19 @@ services:
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
         networks:
             - laravel-docker
+
+    queue:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      command: 'php artisan queue:work'
+      restart: unless-stopped
+      volumes:
+        - ./:/var/www
+      depends_on:
+        - redis
+      networks:
+        - laravel-docker
 
     # Redis
     redis:
