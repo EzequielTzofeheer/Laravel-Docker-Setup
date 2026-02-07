@@ -12,7 +12,7 @@ services:
         depends_on:
             - redis
         networks:
-            - laravel-docker
+            - laravel-docker-setup
 
     # NGINX
     nginx:
@@ -24,7 +24,7 @@ services:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
         networks:
-            - laravel-docker
+            - laravel-docker-setup
 
     # DB (MySQL)
     db:
@@ -41,7 +41,7 @@ services:
         ports:
             - "3440:3306"
         networks:
-            - laravel-docker
+            - laravel-docker-setup
 
     # PHPMyAdmin
     phpmyadmin:
@@ -55,7 +55,7 @@ services:
             PMA_PORT: 3306
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
         networks:
-            - laravel-docker
+            - laravel-docker-setup
 
     queue:
       build:
@@ -68,14 +68,14 @@ services:
       depends_on:
         - redis
       networks:
-        - laravel-docker
+        - laravel-docker-setup
 
     # Redis
     redis:
         image: redis:latest
         networks:
-            - laravel-docker
+            - laravel-docker-setup
 
 networks:
-    laravel-docker:
+    laravel-docker-setup:
         driver: bridge
