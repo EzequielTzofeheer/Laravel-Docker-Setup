@@ -4,6 +4,7 @@
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-blue)
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Stable-success)
 
 A reusable and standardized **Docker-based development environment** for **Laravel 12**, designed to accelerate project setup and ensure consistency across applications.
 
@@ -88,6 +89,13 @@ composer install
 ```bash
 php artisan key:generate
 ```
+
+---
+
+## 🌐 Access
+
+- Application: http://localhost:8090
+- PhpMyAdmin: http://localhost:8550
 
 ---
 
